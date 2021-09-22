@@ -1,40 +1,51 @@
 // var person = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
 
-// if (person != null) {
-//   document.getElementById("demo").innerHTML =
-//   "Hello " + person + "! How are you today?";
-// }
+var playHistory = [0,0,0];
+var compPlay = Math.floor(Math.random()*3);
+var play = "";
 
-// Math.floor(Math.random()*3)
+if (compPlay == 0) {
+    play = "r";
+} else if (compPlay == 1) {
+    play = "p";
+} else {
+    play = "s";
+}
 
-function myFunction() {
-    var person = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
-    if (person != null) {
+console.log(play);
+
+function playGame() {
+    var rps = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
+    rps = rps.toLowerCase();
+    if (rps != "r" && rps != "p" && rps != "s" && rps != null) {
       document.getElementById("demo").innerHTML =
-      "Hello " + person + "! How are you today?";
+      "Please input a valid play.";
+      return;
+    } else if (rps == play) {
+        console.log("You tied!")
+        playHistory[2]++        
+    } else if (rps == "r") {
+        if  (play == "p") { 
+            console.log("You lost")
+            playHistory[1]++}
+        if  (play == "s") { 
+            console.log("You won")
+            playHistory[0]++}
+    } else if (rps == "p") {
+        if  (play == "r") { 
+            console.log("You won")
+            playHistory[0]++}
+        if  (play == "s") { 
+            console.log("You lost")
+            playHistory[1]++}
+    } else if (rps == "s") {
+        if  (play == "r") { 
+            console.log("You lost")
+            playHistory[1]++ }
+        if  (play == "p") { 
+            console.log("You won")
+            playHistory[0]++}
     }
 }
 
-
-
-// if user inputs r 
-// if computer selects s
-//     console.log (winner)
-//     return counter+1 on winner attribute of playHistory function
-// else 
-//     console.log(loser)
-//     return counter+1 on loser attribute of playHistory function
-// else if user inputs p
-// if computer selects s
-//     console.log(loser)
-//     return counter+1 on loser attribute of playHistory function
-// else computer elects r
-//     console.log(winner)
-//     return counter+1 on winner attribute of playHistory function
-// else 
-// if computer selects p
-//     console.log(winner)
-//     return counter+1 on winner attribute of playHistory function
-// else computer elects r
-//     console.log(loser)
-//     return counter+1 on loser attribute of playHistory function
+// confirm() to check if user wants to play agian or to reset vars
