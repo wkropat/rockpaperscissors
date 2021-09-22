@@ -16,9 +16,7 @@ function playGame() {
     var rps = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
     rps = rps.toLowerCase();
     if (rps != "r" && rps != "p" && rps != "s") {
-      document.getElementById("demo1").innerHTML =
-      "Please input a valid play.";
-      return;
+      alert("Please input a valid play.");
     } else if (rps == play) {
         alert("You tied!")
         playHistory[2]++        
@@ -59,5 +57,4 @@ function playAgain() {
   document.getElementById("demo2").innerHTML = txt;
 }
 
-
-// confirm() to check if user wants to play agian or to reset vars
+playAgain();
