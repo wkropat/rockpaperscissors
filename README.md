@@ -9,6 +9,7 @@ Rock Paper Scissors web "game"
 Page that loads script
 
 * Randomly picks r p or s
+    Math.floor(Math.random()*3)
 
 * Prompt user  to enter text 
 
