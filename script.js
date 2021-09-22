@@ -12,12 +12,12 @@ if (compPlay == 0) {
     play = "s";
 }
 
-console.log(play);
+console.log(compPlay);
 
 function playGame() {
     var rps = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
     rps = rps.toLowerCase();
-    if (rps != "r" && rps != "p" && rps != "s" && rps != null) {
+    if (rps != "r" && rps != "p" && rps != "s") {
       document.getElementById("demo").innerHTML =
       "Please input a valid play.";
       return;
@@ -47,5 +47,18 @@ function playGame() {
             playHistory[0]++}
     }
 }
+
+
+function playAgain() {
+  var txt;
+  var r = confirm("Play again?\nEither OK or Cancel.");
+  if (r == true) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+
 
 // confirm() to check if user wants to play agian or to reset vars
