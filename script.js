@@ -21,7 +21,7 @@ function playAgain() {
     txt = "You pressed Cancel!";
     playHistory=[0,0,0];
   }
-  document.getElementById("demo2").innerHTML = txt;
+//   document.getElementById("demo2").innerHTML = txt;
 }
 
 function playGame() {
@@ -54,6 +54,7 @@ function playGame() {
             alert("You won")
             playHistory[0]++}
     }
+    window.alert("Play History:\n Won: " + playHistory[0] + "\n Lost: " + playHistory[1] + "\n Tied: "  + playHistory[2])
     playAgain();
 }
 
