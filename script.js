@@ -12,6 +12,18 @@ if (compPlay == 0) {
     play = "s";
 }
 
+function playAgain() {
+  var txt;
+  var r = confirm("Play again?\nEither OK or Cancel.");
+  if (r == true) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+    playHistory=[0,0,0];
+  }
+  document.getElementById("demo2").innerHTML = txt;
+}
+
 function playGame() {
     var rps = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
     rps = rps.toLowerCase();
@@ -42,19 +54,10 @@ function playGame() {
             alert("You won")
             playHistory[0]++}
     }
+    playAgain();
 }
 
 
-function playAgain() {
-  var txt;
-  var r = confirm("Play again?\nEither OK or Cancel.");
-  if (r == true) {
-    txt = "You pressed OK!";
-  } else {
-    txt = "You pressed Cancel!";
-    playHistory=[0,0,0];
-  }
-  document.getElementById("demo2").innerHTML = txt;
-}
 
-playAgain();
+
+
