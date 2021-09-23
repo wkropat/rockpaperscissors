@@ -1,5 +1,3 @@
-// var person = prompt("Rock, Paper, or Scissors", "Pick your weapon!");
-
 var playHistory = [0,0,0];
 var compPlay = Math.floor(Math.random()*3);
 var play = "";
